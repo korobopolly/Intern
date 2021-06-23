@@ -47,11 +47,17 @@ localhost/install.php 이동
 자신의 이메일 넣고
 무들 비밀번호 설정 Abcd1234@
 
-5. moodle사용하기
+5. Virtual host 설정
+구글 검색 virtual host 설정
+C:\Apache24\conf\httpd.conf 파일 오픈
+#vhost settings
+Include conf/extra/httpd-vhosts.conf 추가
+
+6. moodle사용하기
 관리자 권한으로 vscode실행
 windows\system32\drivers\etc\hosts 파일 오픈
 사용할 페이지 가상화하여 선언 후 (오류 로그 이름 변경하여 어떤 파일의 어떤 오류가 있는지 확인)
-C:\Apache24\conf\extra 폴더 내부의 httpd-vhosts.conf 파일 오픈
+C:\Apache24\conf\extra\httpd-vhosts.conf 파일 오픈
 사용할 페이지 정보 저장
 
-6. moodle.org를 통해서 moodle 공부하기
+7. moodle.org를 통해서 moodle 공부하기
