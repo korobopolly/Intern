@@ -1,0 +1,57 @@
+무들 3.9.7+ 설치
+링크 https://download.moodle.org/releases/security/
+적혀있는 권장사항 따라서 설치
+
+php 7.2.0 설치
+링크 https://windows.php.net/downloads/releases/archives/
+mysql 5.6 설치
+링크 https://kiwinote.tistory.com/77?category=942734
+apache 2.4.48 설치
+링크 https://www.apachelounge.com/download/
+
+apache 실행 오류 발생
+삭제 후 재설치하려고 강제로 서비스 삭제한 것이 원인인 것 같음
+
+cmd 관리자 권한 실행
+cd c:\apache24\bin
+httpd -k install
+httpd -k start
+
+환경 구축 시작
+1. apache 실행
+localhost 이동 it works! 확인
+
+2. php 연동
+phpinfo.php 생성
+php.ini 파일 수정
+<--
+확장 파일 extension 필요한 파일들 ;주석 해제
+extension_dir C:\php\ext 경로 설정
+-->
+
+mysqli는 사용 가능하지만 cURL 오류 발생 (phpinfo.php에서 검색 되지않음)
+구글 검색 windows php curl
+ssleay32.dll, libeay32.dll 파일을 system32, apache\bin, php 파일 내부에 복사
+
+환경변수 path php경로 추가
+
+3. mysql 연동
+포트 3306 사용
+mysql문을 사용하여 pw 1234로 변경
+데이터베이스 moodle_test로 생성
+
+4. moodle 설치
+moodle 파일의 압축을 풀고 내용물을 apache\htdocs로 이동
+localhost/install.php 이동
+설치 과정 진행
+자신의 이메일 넣고
+무들 비밀번호 설정 Abcd1234@
+
+5. moodle사용하기
+관리자 권한으로 vscode실행
+windows\system32\drivers\etc\hosts 파일 오픈
+사용할 페이지 가상화하여 선언 후 (오류 로그 이름 변경하여 어떤 파일의 어떤 오류가 있는지 확인)
+C:\Apache24\conf\extra 폴더 내부의 httpd-vhosts.conf 파일 오픈
+사용할 페이지 정보 저장
+
+6. moodle.org를 통해서 moodle 공부하기
