@@ -30,14 +30,19 @@ extension_dir C:\php\ext 경로 설정
 -->
 
 mysqli는 사용 가능하지만 cURL 오류 발생 (phpinfo.php에서 검색 되지않음)
-구글 검색 windows php curl
+구글 검색 windows php curl 
 ssleay32.dll, libeay32.dll 파일을 system32, apache\bin, php 파일 내부에 복사
 
 환경변수 path php경로 추가
 
 3. mysql 연동
 포트 3306 사용
-mysql문을 사용하여 pw 1234로 변경
+mysql 접속
+cmd에서 mysql -u root -p 실행 패스워드는 엔터
+use mysql;
+select host, user, passwor from user; 데이터베이스 정보 확인
+update user set password=password('1234') where user='root'; 데이터베이스 비밀번호 변경
+flush privileges; 변경사항 즉시 반영
 데이터베이스 moodle_test로 생성
 
 4. moodle 설치
@@ -61,3 +66,15 @@ C:\Apache24\conf\extra\httpd-vhosts.conf 파일 오픈
 사용할 페이지 정보 저장
 
 7. moodle.org를 통해서 moodle 공부하기
+
+8. 다음 날 moodle 접속시 forbidden 오류
+C:\Apache24\logs 에러 로그 확인
+AH00112: Warning: DocumentRoot [C:/Apache24/docs/dummy-host.example.com] does not exist
+어제 작업한 가상화 작업이 문제였던 걸로 추정
+C:\Apache24\conf\extra\httpd-vhosts.conf 파일 오픈
+해당 부분 #을 이용해 모두 주석처리
+해결
+
+9. moodle 로그인
+아이디 admin
+비밀번호 Abcd1234@
