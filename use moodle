@@ -1,0 +1,20 @@
+사용자 생성
+sku001 Abcd1234@ 학생용 계정 생성
+skut001 Abcd1234@ 교수용 계정 생성
+강좌 -> 참여자 -> 사용자 등록 -> select users를 통해서 강좌에 참여할 사용자 추가
+
+플러그인 추가 시 오류 메시지 발생
+구글 검색 mysql barracuda set
+SET GLOBAL innodb_file_format=barracuda;
+
+구글 검색 mysql innodb_large_prefix to on
+SELECT * FROM information_schema.INNODB_SYS_TABLESPACES WHERE NAME LIKE '%innodb_%';
+set global innodb_large_prefix = ON;
+
+명령어는 HeidiSQL을 통해서 ctrl+F9로 쿼리를 날린다.
+
+소프트웨어 환경을 설정하고 관리
+사이트 관리 -> cron 검색 -> localhost/admin/cron.php?password=비밀번호
+
+텍스트 편집기 메뉴 수정하고 싶을 때
+사이트 관리 -> atto 검색 ->편집기 설정 -> atto HTML editor 설정 -> toolbar config 수정
