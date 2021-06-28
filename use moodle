@@ -12,9 +12,26 @@ SELECT * FROM information_schema.INNODB_SYS_TABLESPACES WHERE NAME LIKE '%innodb
 set global innodb_large_prefix = ON;
 
 명령어는 HeidiSQL을 통해서 ctrl+F9로 쿼리를 날린다.
+오류 해결
+
 
 소프트웨어 환경을 설정하고 관리
 사이트 관리 -> cron 검색 -> localhost/admin/cron.php?password=비밀번호
 
 텍스트 편집기 메뉴 수정하고 싶을 때
 사이트 관리 -> atto 검색 ->편집기 설정 -> atto HTML editor 설정 -> toolbar config 수정
+
+아파치 실행 시 오류 메시지 발생
+apache the requested operation has failed가 뜨고 apache가 켜지지 않음
+C:\apache24\bin 에서 httpd.exe -k start 실행
+(OS 10013)액세스 권한에 의해 숨겨진 소켓에 액세스를 시도했습니다.  : AH00072: make_sock: could not bind to address [::]:80
+(OS 10013)액세스 권한에 의해 숨겨진 소켓에 액세스를 시도했습니다.  : AH00072: make_sock: could not bind to address 0.0.0.0:80
+AH00451: no listening sockets available, shutting down
+AH00015: Unable to open logs
+
+서비스 들어가서 world wide web publishing service 중단
+C:\apache24\bin 에서 httpd.exe -k uninstall, httpd.exe -k install, httpd.exe -k start
+오류 해결
+
+IIS가 자동으로 작동한 것으로 보임
+링크 https://aspdotnet.tistory.com/1685
