@@ -11,7 +11,7 @@ SET GLOBAL innodb_file_format=barracuda;
 SELECT * FROM information_schema.INNODB_SYS_TABLESPACES WHERE NAME LIKE '%innodb_%';
 set global innodb_large_prefix = ON;
 
-명령어는 HeidiSQL을 통해서 ctrl+F9로 쿼리를 날린다.
+명령어는 HeidiSQL을 통해서 ctrl+shift+F9로 쿼리를 날린다.
 오류 해결
 
 
