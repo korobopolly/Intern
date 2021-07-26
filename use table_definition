@@ -45,3 +45,22 @@ moodle에 외래키가 없는 이유
 개발자의 성향에 따라 다름 (moodle의 개발자는 외래키를 싫어하나보다)
 
 외래키 관련해서 에러 뜨면 외래키를 전부 지워야할 수 있다.
+
+무들 캐시 청소 
+링크 http://localhost/admin/purgecaches.php
+
+join 
+서로 다른 테이블을 묶는 것
+조건 : 연관되는 필드가 존재해야함
+
+$sql = 'SELECT c.id, c.tid, t.physical_name, t.logical_name, t.comment, c.column_seq, c.column_type, c.physical_name as c_pname, c.logical_name as c_lname 
+FROM mdl_local_ubdocument_table_columns AS c 
+JOIN mdl_local_ubdocument_tables AS t 
+ON t.id=c.tid ORDER BY c.id';
+
+$sql = 'SELECT * FROM mdl_course WHERE id != 1';
+// $sql = "SELECT * FROM {course} WHERE id != 1"; 
+여러 곳에서 사용할 수 있는 sql문, ""쓰는 이유: 프리픽스(mdl_)를 자동 적용
+
+SELECT ANIMAL_TYPE, IFNULL(NAME,'No name') AS NAME, SEX_UPON_INTAKE FROM ANIMAL_INS
+IFNULL을 사용하여 NULL 값을 No name으로 변경
